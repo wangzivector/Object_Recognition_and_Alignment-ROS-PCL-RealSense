@@ -1,0 +1,65 @@
+
+# 2020.02.07 night#
+ grid size 过小或者不做 voxel_size 都会导致卡死 并且 outpcd为 wrong
+*solution:  pcl::copyPointCloud(*cloud_extract, *cloud_outlier);
+
+## 提示 invalid use of incomplete type
+  实例化点云和操作处理的点云类型 不匹配
+
+2020.02.09 morning 
+ 改进识别思路
+// 1. 待验证，特征计算的前期准备如法线的估计是否准确 -- 法线正常 -- 参数 descr_rad   
+// 2. 待验证，特征估计的参数是否合理有效，包括其他的环境参数 -- 主要问题 shot 特征为nan
+ 3. 待验证，特征计算为什么会和位置产生联系
+ 4. 待验证，对应点估计思路是否准确
+ 5. 可视化对应点，观察对应点是否基本正确
+ 6. 其他特征计算是否有效，如VFH FPFH 等等
+ 7. 摄像头的边界问题？？出现的Nan问题，做出统计以及产生的原因 -- 当参数descr_rad设置不当并且在摄像头一定视角时，计算得到的shot352 为nan不存在 --增大该值，nan消失
+    但是descreptor没有特异性、**和位置坐标正相关的问题没有解决**
+
+ 另外算法思路
+// 1. 去背景点，聚类成主要物体类别
+// 2. 做点云配准
+
+
+2020.02.10 night
+// 尝试FPFH特征并且运用sac icp方法
+ 
+2020.02.11 night 
+// 给feature_to_reco 作一个congfig
+// 探讨pac的优劣势和瓶颈、改良 -- 是用于配准拾取的有效方法 -- 瓶颈为sacia 的前期处理速率、精度无法达到要求 -- 改进前述的sacia或者找到替代。
+
+2020.02.13 morning
+// 探讨sacia + icp的性能 -- 初步估计识别速率可以达到1Hz，成功率可以考虑--等待判断匹配率
+
+2020.02.14 afternoon
+// 进行segmentation -- segmentation 方法主要有： SAC一致性估计特定简单形状结果、 （条件）欧式距离准则分割、 区域生长（法向量、颜色变化）分割、 最小图割方法 -- rgb region 
+// 固定摄像头背景去除算法 -- no right -- 使用getPointIndicesFromNewVoxels 基本达到要求
+// Identifying ground returns using ProgressiveMorphologicalFilter segmentation //去除平面的方法改进 
+
+2020.02.21 noon
+// 对于registration还有其他的方法如： NDT -- so slow and ... / Robust pose estimation of rigid objects( RANSAC pose estimation) -- slow and ... not really well
+// colorize recognition - (FPFH :not colorial feature) (sacia : 粗配准、结合特征) (ICP : 精配准、仅用位置信息) 
+ Smoothing and normal estimation based on polynomial reconstruction //处理模型的平滑 曲面重建技术 对曲面进行平滑和重叠面估计 surface class
+ 探讨其他方法和描述子 --NARF, FPFH, BRIEF 或SIFT ！！ feature moudle
+ 探讨判断配准是否成功的方法 -- 对于形状相同的如box类型，需要结合色彩匹配即下面的 colorize recognition 
+ 找到shot的问题， -- 以下可能：normal 计算错误nan； model 和 sener 尺度改变 ； 
+ 包括进行debug和实验其他的pcd Correspondence grouping /Hypothesis Verification
+
+2020.02.24 night
+ 总结 
+ 确定一个baseline方案，探讨其最佳工作状态并确定之后的改进思路。
+ 按照上述的探讨方案结果，最终的实现效果仅为较有限场景内的识别功能，并且速度无法满足较好的使用场景，仍然有待进一步探索工作。
+ 按照提取特征，将特征匹配后进行识别的思路，探索还是不算完整的，仅仅只成功的探索为FPFH特征子，尚且还有许多特征工作未完成；
+ 以下方面为具体的表现
+ 1. 按照设想，其他的特征子仍然具备前面的correspondence match的思路，即使特征shot没有正确计算出来，快速更换其他的特征也是应该必要的，不应该仅仅局限于此。
+ 2. 按照代码实现的思路，成功的代码思路是先对物体进行分割，分割的好坏直接决定了后续配准的结果。后续配准遵循粗配准后进一步ICP精匹配的结果，ICP算法速度符合要
+    求的同时对粗配准有较好的细配准效果，按照该思路，ICP算法可以作为该类算法的通用后续处理思路。
+3.  目前该类点配准的瓶颈、难点在如何进行有效的分割，以及提高粗配准的效果和速度，如果突破了以上两个方面，仍然有可能用于实践中。
+
+展望以下的改进思路。
+回归之前的特征加对应点识别、霍夫投票的模式进行探讨和实现
+1. 针对目前仍然无法计算出模型的前提，改变计算方式，更改为之前的直接从场景中计算出模型的参数对model进行更新。有条件者直接从存储model和point的方式 -- 先不管那个全景了
+2. 对于shot特种描述的问题，探讨其他的特征子计算问题并进行同样的处理。如VFH MARF
+3. 探讨配准的成功计算法
+ 
