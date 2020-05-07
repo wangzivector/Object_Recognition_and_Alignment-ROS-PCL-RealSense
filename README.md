@@ -1,6 +1,6 @@
 # Object Recognition implement with ROS and [PCL](https://pointcloudlibrary.github.io/documentation/)
 
-### Basic information
+## Basic information
 
 **This is a modified version of**  [kalectro  **object_recognition.**](https://github.com/kalectro/object_recognition)
 
@@ -46,8 +46,7 @@ The package is subdivided into different ROS nodes and can be replaced easyly.
 * **VisuaRVIZlization of all mid-process pointclouds and results in RVIZ.**
 
 * **detailed dynamic_reconfigure in ROS for debug.**
-<p></p>
-<p></p>
+
 ## Steps 
 
 * **step 1**
@@ -97,8 +96,8 @@ launch/ob_recognition.launch
   Will keep going.
 
   
-<p></p>
-### Result till now
+
+## Result till now
 
 This is the Rviz terminal and reconstruct model using other PointCloud software.
 
@@ -110,16 +109,13 @@ The following image shows the most impressing performance. However,this is not r
 <div align="center"> <img src="./PNG/scene.png" height="300" />
     <img src="./PNG/reconstruct.png" height="300" /></div>
 
-
-<p></p>
-### Extend File
+## Extend File
 
 * [description_cn.pdf](./description_cn.pdf)  is a detailed description in Chinese of the pointcloud process about this project.
 * [todo.txt](./todo.txt)  is the timeline about the thought and hints of what I have done in iterations.
 
 
-<p></p>
-### **Notes**
+## **Notes**
 
 There are some models and scene in ./obj directory, you can use it for debugging. (PCD format)
 
