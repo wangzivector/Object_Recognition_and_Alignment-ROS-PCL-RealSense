@@ -1,4 +1,4 @@
-## Object Recognition implement with ROS and [PCL](https://pointcloudlibrary.github.io/documentation/)
+# Object Recognition implement with ROS and [PCL](https://pointcloudlibrary.github.io/documentation/)
 
 ### Basic information
 
@@ -17,9 +17,10 @@ SHOT1344 -> describes the shape and the color distribution around a keypoint.
 Detection was test using real pointclouds.
 The package is subdivided into different ROS nodes and can be replaced easyly. 
 
+---
+<br /><br />
 
-
-####  This repository extend the following features:
+##  This repository extend the following features:
 
 * **RealSense kinect V2  RGBD device starting and configuring.**
 
@@ -45,8 +46,9 @@ The package is subdivided into different ROS nodes and can be replaced easyly.
 * **VisuaRVIZlization of all mid-process pointclouds and results in RVIZ.**
 
 * **detailed dynamic_reconfigure in ROS for debug.**
-
-### Steps 
+<br />
+---
+## Steps 
 
 * **step 1**
 
@@ -95,7 +97,7 @@ launch/ob_recognition.launch
   Will keep going.
 
   
-
+<br />
 ### Result till now
 
 This is the Rviz terminal and reconstruct model using other PointCloud software.
@@ -109,14 +111,14 @@ The following image shows the most impressing performance. However,this is not r
     <img src="./PNG/reconstruct.png" height="300" /></div>
 
 
-
+<br />
 ### Extend File
 
 * [description_cn.pdf](./description_cn.pdf)  is a detailed description in Chinese of the pointcloud process about this project.
 * [todo.txt](./todo.txt)  is the timeline about the thought and hints of what I have done in iterations.
 
 
-
+<br />
 ### **Notes**
 
 There are some models and scene in ./obj directory, you can use it for debugging. (PCD format)
