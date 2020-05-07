@@ -8,17 +8,17 @@ The original version contains basic frame of ROS interface and recognition funct
 
 before modifying including :
 
-find a known object inside a pointcloud using PCL and ROS groovy
+> find a known object inside a pointcloud using PCL and ROS groovy
 Up to this point this package computes and supports two different SHOT descriptors.
 
-SHOT352 -> describes the shape around a keypoint
+> SHOT352 -> describes the shape around a keypoint
 SHOT1344 -> describes the shape and the color distribution around a keypoint.
 
-Detection was test using real pointclouds.
+> Detection was test using real pointclouds.
 The package is subdivided into different ROS nodes and can be replaced easyly. 
 
----
-<br /><br />
+<p></p>
+
 
 ##  This repository extend the following features:
 
@@ -46,8 +46,8 @@ The package is subdivided into different ROS nodes and can be replaced easyly.
 * **VisuaRVIZlization of all mid-process pointclouds and results in RVIZ.**
 
 * **detailed dynamic_reconfigure in ROS for debug.**
-<br />
----
+<p></p>
+<p></p>
 ## Steps 
 
 * **step 1**
@@ -97,7 +97,7 @@ launch/ob_recognition.launch
   Will keep going.
 
   
-<br />
+<p></p>
 ### Result till now
 
 This is the Rviz terminal and reconstruct model using other PointCloud software.
@@ -111,14 +111,14 @@ The following image shows the most impressing performance. However,this is not r
     <img src="./PNG/reconstruct.png" height="300" /></div>
 
 
-<br />
+<p></p>
 ### Extend File
 
 * [description_cn.pdf](./description_cn.pdf)  is a detailed description in Chinese of the pointcloud process about this project.
 * [todo.txt](./todo.txt)  is the timeline about the thought and hints of what I have done in iterations.
 
 
-<br />
+<p></p>
 ### **Notes**
 
 There are some models and scene in ./obj directory, you can use it for debugging. (PCD format)
