@@ -25,7 +25,7 @@ The package is subdivided into different ROS nodes and can be replaced easyly.
 * **RealSense kinect V2  RGBD device starting and configuring.**
 
 * **Add various segmentation methods (including RegionGrowingRGB and SAC for plane segmentation/removing)**
-* **PCD /processed models file saving for debugging and obtaining models.(mainly in [./obj](./obj))**
+* **PCD /processed models file saving for debugging and obtaining models.(mainly in [./obj](./object_recognition/obj))**
 
 * **Implement more feature descriptors for recognition (FPFH and more)<need debug>**
 
@@ -77,8 +77,9 @@ src/pcd_to_pointcloud.cpp
   Launch two .launch files to start the roscore \ rviz \ reconfigure terminals.
 
 ```
-launch/reco.launch
-launch/ob_recognition.launch
+roslaunch object_recognition reco.launch 
+roslaunch object_recognition ob_recognition.launch 
+
 ```
 
 * **step 4**
@@ -113,6 +114,7 @@ The following image shows the most impressing performance. However,this is not r
 
 * [description_cn.pdf](./description_cn.pdf)  is a detailed description in Chinese of the pointcloud process about this project.
 * [todo.txt](./todo.txt)  is the timeline about the thought and hints of what I have done in iterations.
+* [object_recognition/obj](./object_recognition/obj) contains 8 models of common things. There are about 30 world frames too.
 
 
 ## **Notes**

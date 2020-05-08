@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="object_recognition" name="feature_to_reco" type="feature_to_reco" required="true" output="screen" > </node> 
+	<node pkg="rviz" name="rviz" type="rviz"></node>
+	<node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure" output="screen"></node>
+</launch>

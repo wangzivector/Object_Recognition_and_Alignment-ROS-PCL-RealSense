@@ -1,0 +1,41 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  CLOSE: false
+  apply_noplane: true
+  apply_outlier: true
+  apply_voxel: true
+  cloud_ss: 0.01
+  descr_rad: 0.03
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      CLOSE: false
+      apply_noplane: true
+      apply_outlier: true
+      apply_voxel: true
+      cloud_ss: 0.01
+      descr_rad: 0.03
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      keep_organized: false
+      name: Default
+      outlier_Thresh: 0.1
+      outlier_meanK: 30
+      output_frame: map
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      start: false
+      state: true
+      threshold_plane: 0.02
+      type: ''
+      voxel_size: 0.0015
+    state: []
+  keep_organized: false
+  outlier_Thresh: 0.1
+  outlier_meanK: 30
+  output_frame: map
+  start: false
+  threshold_plane: 0.02
+  voxel_size: 0.0015
+state: []

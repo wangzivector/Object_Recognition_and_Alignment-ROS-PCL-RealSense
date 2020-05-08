@@ -1,0 +1,8 @@
+<launch>
+	<!--<node pkg="object_recognition" name="feature_to_reco" type="feature_to_reco" output="screen"></node>-->
+	<!--<node pkg="rviz" name="rviz" type="rviz"></node>
+	<node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure" output="screen"></node>-->
+	<node pkg="object_recognition" name="kinect_pointcloud" type="kinect_pointcloud" required="true" output="screen" >
+	    <!--<rosparam command="load" file="$(find object_recognition)/cfg/cconfig.yaml" />-->
+	</node>
+</launch>
