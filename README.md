@@ -17,7 +17,6 @@ SHOT1344 -> describes the shape and the color distribution around a keypoint.
 > Detection was test using real pointclouds.
 The package is subdivided into different ROS nodes and can be replaced easyly. 
 
-<p></p>
 
 
 ##  This repository extend the following features:
@@ -41,7 +40,7 @@ The package is subdivided into different ROS nodes and can be replaced easyly.
 
   NDT Registration
 
-  **Geometric Consistency Grouping**
+  Geometric Consistency Grouping
 
 * **VisuaRVIZlization of all mid-process pointclouds and results in RVIZ.**
 
@@ -110,7 +109,7 @@ The following image shows the most impressing performance. However,this is not r
 <div align="center"> <img src="./PNG/scene.png" height="300" />
     <img src="./PNG/reconstruct.png" height="300" /></div>
 
-## Extend File
+## Extended File
 
 * [description_cn.pdf](./description_cn.pdf)  is a detailed description in Chinese of the pointcloud process about this project.
 * [todo.txt](./todo.txt)  is the timeline about the thought and hints of what I have done in iterations.
