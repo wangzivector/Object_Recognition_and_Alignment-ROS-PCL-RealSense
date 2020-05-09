@@ -106,6 +106,9 @@ This is the Rviz terminal and reconstruct model using other PointCloud software.
 
 The following image shows the most impressing performance. However,this is not robust enough for actual implement. The performance greatly relies on  the parameter of the functions, which is the following work to be done.
 
+<div align="center"> <img src="./PNG/pointcloud.png" height="300" />
+    <img src="./PNG/reco.png" height="300" /></div>
+
 <div align="center"> <img src="./PNG/scene.png" height="300" />
     <img src="./PNG/reconstruct.png" height="300" /></div>
 
