@@ -1,4 +1,4 @@
-# Object Recognition implement with ROS and [PCL](https://pointcloudlibrary.github.io/documentation/)
+# Object Recognition and Alignment in traditional method with ROS and [PCL](https://pointcloudlibrary.github.io/documentation/)
 
 ## Basic information
 
